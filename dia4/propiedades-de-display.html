@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROPIEDADES DE DISPLAY</title>
+
+
+    </style>
+</head>
+
+<body>
+    <style>
+        p {
+            color: blue;
+            width: 70px;
+            height: 50px;
+            border: 1px solid green;
+
+        }
+
+
+        .ej1 {
+            /*no se muestra en pantalla */
+            display: none
+        }
+
+        .ej2 {
+            /*ocupa mismo espacio que tenga el contenido, se muestra como inline y no posee propiedades de alto y ancho*/
+            display: inline;
+
+        }
+
+        .ej3 {
+            /*ocupa todo el ancho que necesita, y podemos poenrle widht y height. Sin embargo por mas que yo haya puesto que ocupa de ancho 150px, como esun bloque, al finalizar corta la linea y continua abajo, no al costado.*/
+            display: block;
+
+        }
+
+        .ej4 {
+            /*mezcla inline + block: por un lado soporta la opcino de ponerle ancho y alto pero no corta la linea, puedo seguir al costado.*/
+            display: inline-block
+        }
+    </style>
+
+
+    <h1>propiedades de display</h1>
+    <h2>1. Display: none</h2>
+    <div>
+        no se muestra en pantalla nada <p class="ej1"> hola cei </p> ysigue el texto
+    </div>
+
+    <h2>2. Display: inline</h2>
+    <div>
+        ocupa mismo espacio que tenga el contenido, <p class="ej2">hola cei </p> se muestra como inline y no posee
+        propiedades de alto y ancho
+    </div>
+
+    <h2>3. Display: block</h2>
+    <div>
+        ocupa todo el ancho que necesita, y podemos poenrle width y height. Sin embargo por mas que yo haya puesto que
+        ocupa de ancho 150px, <p class="ej3">hola cei </p> como esun bloque, al finalizar corta la linea y continua
+        abajo, no al costado.
+    </div>
+
+    <h2>4. Display: inline block</h2>
+    <div>
+        mezcla inline + block: por un lado soporta la opción de ponerle ancho y alto pero no corta la linea, <p
+            class="ej4">hola cei </p> y puedo seguir al costado.
+    </div>
+
+</body>
+
+</html>
