@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox</title>
+
+    <style>
+        .box { /*todas las cajas que se llamen box van a tener estas caracteristicas*/
+
+            height: 100px;
+            width: 200px;
+            background-color: orange;
+            border: 3px solid black;
+            border-radius: 5px;
+            box-shadow: inset 10px 10px 10px rgb(253, 200, 102);
+            box-shadow:  10px 10px 10px rgb(0, 0, 0.3);
+           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+               .box2 {/*todas las cajas que se llamen box2 van a tener estas caracteristicas*/
+
+            height: 100px;
+            background-color: orange;
+            border: 3px solid black;
+            border-radius: 5px;
+            font-size: 10px;
+
+            /*propiedades de flex, hay que poner si o si lo de display: flex*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            flex-grow: 1;
+
+        }
+
+        .boxdouble {/*todas las cajas que se llamen boxdouble van a tener estas caracteristicas*/
+            width: 60px;
+
+        }
+
+        .flexx1 {
+            /*propiedades de flex*/
+            display: flex;
+            gap: 4px;
+            /*propiedades de css estandard*/
+            color: white;
+    
+            font-weight: bold;
+            font-size: x-large;
+        }
+
+       
+
+        .purplebox {
+
+            background-color: purple;
+            padding: 5px;
+            height: 200px;
+
+        }
+
+
+        .ej1 {
+            flex-direction: row-reverse;
+
+
+        }
+
+        .ej2 {
+            flex-wrap: wrap;
+
+        }
+
+        .ej3 {
+            flex-direction: row;
+            justify-content: flex-start;
+            /*comienzo*/
+            justify-content: flex-end;
+            /*fin*/
+            justify-content: center;
+            /*centro*/
+            justify-content: space-between;
+            justify-content: space-around;
+            justify-content: space-evenly;
+
+        }
+
+        .ej4 {
+            flex-direction: row;
+            justify-content: flex-start;
+            /*comienzo*/
+           /* align-items: flex-start;
+            align-items: flex-end;
+            align-items: center;
+            align-items: stretch;
+            align-items: baseline;*/
+
+        }
+
+        .handborder{
+border: solid 5pxfgb(0.0.0);
+border-radius: 255px 15px 225px 15px/;155px 255px 15px 255px
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <h3>flex direction</h3>
+direccion de las cajitas 
+    <div class="flexx1 ej1">1
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+    </div>
+    <h3>flex wrap</h3>
+    como se comportan las cajitas cuando hacemos grande y pequeña la pantalla (se bajan para abajo )
+    <div class="flexx1 ej2">1
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box boxdouble">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+    </div>
+
+    <h3>justify content</h3>
+    <p>modifica el alineado en el eje principal. puede cambiar. Si estamos en row, es horizontal, si tamos en column el
+        eje principal es el vertical.</p>
+    <div class="flexx1 ej3 purplebox">
+        <div class="box boxdouble">2</div>
+        <div class="box">3</div>
+        <div class="box boxdouble">4</div>
+
+    </div>
+<div>
+    <h3>align items</h3>
+    <p>modifica el alineadao en el eje secundario.</p>
+    <div class="flexx1 ej4 purplebox">
+        <div class="box boxdouble">2</div>
+        <div class="box">3</div>
+        <div class="box boxdouble">4</div>
+    </div>
+<div>
+        <h3>align self</h3>
+        <p>modifica un elemento.</p>
+        <div class="flexx1 ej4 purplebox">
+            <div class="box boxdouble">2</div>
+            <div class="box">3</div>
+            <div class="box boxdouble" style="align-self: flex-end;">4</div>
+    </div>
+
+    <div>
+        <h3>flex-grow</h3>
+        <p>expandir el elemento tanto como le digamos.</p>
+        <div class="flexx1 ej4 purplebox">
+            <div class="box2 .handborder">espacio dinamico porque lleva la etiqueta de box2</div>
+            <div class="box ">2</div>
+            <div class="box" .handborder>3</div>
+            <div class="box">4</div>
+    </div>
+
+</body>
+
+</html>
