@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout cuadricula</title>
+<style>
+    * {
+        margin: 0;  
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .grid-container{
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+
+    }
+    .card{
+       
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: 200px;
+         /*se puede reemplazar con una sola: "flex"
+        tal que así: flex: 1 0 200px*/
+        background-color: #f0f0f0;
+        padding: 20px;
+       
+    
+
+    }
+</style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="card">tarjeta1</div>
+        <div class="card">tarjeta2</div>
+        <div class="card">tarjeta3</div>
+        <div class="card">tarjeta4</div>
+        <div class="card">tarjeta5</div>
+        <div class="card">tarjeta6</div>
+
+    </div>
+</body>
+</html>
