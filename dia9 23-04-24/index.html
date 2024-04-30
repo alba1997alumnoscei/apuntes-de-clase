@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            width: 100%;
+            padding: 20px;
+            margin: 20px;
+            border: 20px;
+            background-color: gray;
+
+
+
+        }
+
+        .header {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            background-color: darkorchid;
+            border: 1px solid black;
+            padding: 10px
+        }
+
+        .main {
+            display: flex;
+            flex-direction: row;
+           
+            height: 100vh;
+
+
+        }
+
+        .footer {
+     
+            border: 1px solid black;
+            padding: 10px
+        }
+
+        .sidebar {
+       
+            border: 1px solid black;
+            padding: 10px;
+            width: 200px;
+
+
+        }
+
+
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+          
+            flex-grow: 1;
+            gap: 20px;
+            padding: 20px;
+
+        }
+
+        .fila-1 {
+            display: flex;
+            flex-direction: column;
+          
+            
+            padding: 10px;
+            flex-grow: 1;
+
+
+
+
+        }
+
+        .fila-2 {
+            display: flex;
+            flex-direction: row;
+          
+            width: 100%;
+            gap: 20px;
+            flex-grow: 1;
+
+
+        }
+
+        .content-2 {
+            display: flex;
+            flex-direction: row;
+       
+            width: 50%;
+            height: 100%;
+            border: 1px solid black;
+            padding: 10px
+        }
+
+        .content-3 {
+            display: flex;
+            flex-direction: row;
+            width: 50%;
+            height: 100%;
+            border: 1px solid black;
+            padding: 10px;
+
+
+
+        }
+
+        .box {
+            background-image: linear-gradient(130deg, pink, orange);
+            border: 6px solid black;
+            border-radius: 6px;
+            padding: 10px;
+
+            /*centrar contenido en mis cajas*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 10px 20px rgb(0, 0, 1);
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <div class="header box"> header </div>
+
+
+        <div class="main">
+
+            <div class="sidebar box"> sidebar </div>
+
+
+
+            <div class="main-content">
+
+
+                <div class="fila-1">
+                    <div class="content box"> content 1 </div>
+
+                    </div>
+
+
+                    <div class="fila-2">
+                        <div class="content box">content 2 </div>
+                        <div class="content box">content 3 </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+            <div class="footer box"> footer </div>
+        </div>
+
+</body>
+
+</html>

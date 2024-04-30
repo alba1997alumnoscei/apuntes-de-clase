@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>layout cuadricula</title>
 <style>
+    /*esto * es una hoja de reseteo. EStamos diciendo a todos los elementos que pongan el margin 0 y padding 0*/
+    
     * {
         margin: 0;  
         padding: 0;
-        box-sizing: border-box;
+        box-sizing: border-box; /*para que el padding esté por dentro*/
     }
 
     .grid-container{
@@ -19,9 +21,10 @@
     }
     .card{
        
-        flex-grow: 1;
-        flex-shrink: 0;
-        flex-basis: 200px;
+        flex-grow: 1; /*para que crezca un poco más de 200px*/
+        flex-shrink: 0; /*para que no dismninuya más de 200px*/
+        flex-basis: 200px; /*para que las cajitas midan 200px*/
+
          /*se puede reemplazar con una sola: "flex"
         tal que así: flex: 1 0 200px*/
         background-color: #f0f0f0;

@@ -1,0 +1,17 @@
+A continuación se presentan 5 casos de uso para formularios. Realizar cada uno según sus requerimientos.
+
+1. Registro de Usuario:
+Campos: Nombre de usuario, dirección de correo electrónico, contraseña, confirmación de contraseña, país, fecha de nacimiento.
+Requerimientos: Validación de correo electrónico,  aceptación de términos y condiciones con link a TyC.
+2. Formulario de Contacto:
+Campos: Nombre, dirección de correo electrónico, asunto, mensaje.
+Requerimientos: Validación de correo electrónico, campo de mensaje obligatorio.
+3. Pedido de Producto:
+Campos: Nombre completo, dirección de envío, ciudad, código postal, país, teléfono, lista de productos (con campos para cantidad y descripción), método de pago.
+Requerimientos: Validación de campos obligatorios, validación de código postal según el país seleccionado, selección de método de pago.
+4. Reserva de Hotel:
+Campos: Nombre completo, dirección de correo electrónico, número de teléfono, fecha de llegada, fecha de salida, tipo de habitación, número de huéspedes, solicitudes especiales (por ejemplo, cama adicional).
+Requerimientos: Validación de fechas, selección de tipo de habitación, confirmación de reserva.
+5. Comentarios de Producto:
+Campos: Nombre, dirección de correo electrónico, calificación (estrellas), comentario.
+Requerimientos: Validación de correo electrónico, campo de comentario obligatorio, selección de calificación.
