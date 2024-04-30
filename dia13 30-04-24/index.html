@@ -5,42 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <!--1. Registro de Usuario:
 Campos: Nombre de usuario, dirección de correo electrónico, contraseña, confirmación de contraseña, país, fecha de nacimiento.
 Requerimientos: Validación de correo electrónico,  aceptación de términos y condiciones con link a TyC.-->
 
 <body>
-    <h1>1. Registro de Usuario</h1>
-    <form action="https:/ecampus.rocks/registro-de-usuario.php" method="post" enctype="multipart/form-data">
 
-        <label for="nombredeusuario">Nombre de usuario</label><br>
-        <input type="text" id="nombredeusuario" name="nombredeusuario" value="" placeholder="Ingrese su nombre" /> <br>
+        
+        <form 
+        action="https:/ecampus.rocks/registro-de-usuario.php" 
+        method="post" 
+        enctype="multipart/form-data">
+            <h2>1. Registro de Usuario</h2>
 
-        <label for="direccionemail">Dirección de correo electrónico</label><br>
-        <input type="email" id="direccionemail" name="direccionemail" value="" placeholder="Ingrese su email" pattern=".+@example\.com" required/> <br>
+            <div class="titulos">
+                <label for="nombredeusuario">Nombre de usuario</label><br>
+                <input type="text" id="nombredeusuario" name="nombredeusuario" value=""
+                    placeholder="Ingrese su nombre" /> <br>
+            </div>
 
-        <label for="contrasena">contraseña</label><br>
-        <input type="text" id="contrasena" name="contrasena" value="" placeholder="Ingrese su contraseña" /> <br>
+            <div class="titulos">
+            <label for="direccionemail">Dirección de correo electrónico</label><br>
+            <input type="email" id="direccionemail" name="direccionemail" value="" placeholder="Ingrese su email"
+                pattern=".+@example\.com" required /> <br>
+            </div>
 
-        <label for="pais">país</label><br>
-        <input type="text" id="pais" name="pais" value="" placeholder="Ingrese su país" /> <br>
+            <div class="titulos">
 
-        <label for="fechanacimiento">Fecha de nacimiento</label><br>
-        <input type="fechanacimiento" id="fechanacimiento" name="fechanacimiento" value="" placeholder="Ingrese su fecha de nacimiento" /> <br>
+            <label for="contrasena">contraseña</label><br>
+            <input type="text" id="contrasena" name="contrasena" value="" placeholder="Ingrese su contraseña" /> <br>
+        </div>
 
-        <input type="radio" value="TYC" name="TYC"> Acepto términos y condiciones <br>
-        <a href="https://policies.google.com/terms?hl=es"> Ir a términos y condiciones</a><br>
+        <div class="titulos">
+            <label for="pais">país</label><br>
+            <input type="text" id="pais" name="pais" value="" placeholder="Ingrese su país" /> <br>
+        </div>
+
+        <div class="titulos">
+
+            <label for="fechanacimiento">Fecha de nacimiento</label><br>
+            <input type="fechanacimiento" id="fechanacimiento" name="fechanacimiento" value=""
+                placeholder="Ingrese su fecha de nacimiento" /> <br>
+            </div>
+
+            <div class="titulos">
+
+            <input type="radio" value="TYC" name="TYC"> Acepto términos y condiciones <br>
+            <a href="https://policies.google.com/terms?hl=es"> Ir a términos y condiciones</a><br>
+        </div>
+
+        <div class="titulos">
 
 
-
-        <input type="submit" value="submit"> 
-
-    </form>
-       
+            <input type="submit" value="submit">
+        </div>
+        </form>
 
 
     
+
 </body>
 
 </html>
