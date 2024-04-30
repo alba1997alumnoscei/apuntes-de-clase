@@ -1,32 +1,61 @@
 * {
     margin: 0px;
-    padding: 0;
+    padding: 0px;
     box-sizing: border-box;
-   
+
 
 }
 
-.form {display: flex;
+.container {
+    display: flex;
+    background-color: rgb(237, 255, 240);
+    padding: 20px;
+    margin: 20px;
+    border: 20px;
+
+}
+
+.tituloformulario {
     flex-direction: column;
-    height: 100vh;
+    height: 100px;
+    width: 100%;
+    padding: 20px;
+    margin: 20px;
+    border: 10px solid rgb(199, 245, 207);
+    background-color: rgb(145, 244, 162);
+    color: solid black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+
+}
+
+.titulos {
+    flex-direction: column;
+    height: 100px;
     width: 100%;
     padding: 20px;
     margin: 20px;
     border: 20px;
-    background-color: beige;}
-    
-    .titulos{
-        flex-direction: column;
-        height: 100px;
-        width: 400px;
-        padding: 20px;
-        margin: 20px;
-        border: 20px;
-        background-color:antiquewhite;
-        color: solid black;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(199, 245, 207);
+    color: solid black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 10%;
+    box-shadow: 15px 10px rgb(145, 244, 162);
+ 
+}
+.submit {
+    flex-direction: column;
+    height: 100px;
+    width: 100%;
+    padding: 20px;
+    margin: 20px;
+    border: 10px solid rgb(199, 245, 207);
+    background-color: rgb(145, 244, 162);
+    color: solid black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   justify-content: center;
+
+}
 
 
 
-
-    }
