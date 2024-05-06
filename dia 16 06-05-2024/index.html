@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .root {
+            /*en html, el root es el */
+        }
+
+        html {}
+
+        .header {}
+.header__logo {}
+.header__ul{}
+.header__li{}
+        
+    
+
+
+       
+    </style>
+
+
+
+
+</head>
+
+
+
+<body>
+    <header class="header">
+        <h1 class="header__logo">CEI</h1>
+        <nav class="header">
+            <ul class="header__ul">
+                <li class="header__li"><a class="a" href="#">Section 1</a></li>
+                <li class="header__li header__li--selected"><a class="a" href="#">Section 2</a></li>
+                <li class="header__li"><a class="a" href="#">Section 3</a></li>
+            </ul>
+        </nav>
+
+
+
+
+
+        <p class="p">
+            <a href="" class="a"></a>
+
+        </p>
+
+    </header>
+
+    <main>
+        <section class="section">
+
+            <h3 class="section__h3">Nombres de VAriables y selectores</h3>
+
+            Tipos de nombres:
+            <ul class="section__ul">
+                <li class="section__li">UPPERCASE: ".MICLASE"</li>
+                <li class="section__li">lowercase: ".miclase"</li>
+                <li class="section__li">PascalCase: ".Mi Clase"</li> la primera letra de cada palabra en mayuscula
+                <li class="section__li">camelCase: ".miClase"</li> la primera es la unica que va en minuscula. podría ser:
+                estoEsUnEjemploDeComoSería
+                <li class="section__li">kebab-case: ".kebab-case"</li> separacion con guiones medios. solo minuscula, no mayuscula
+                <li class="section__li">snake-case: ".snake_case</li> separamos con guión bajo. no mayuscula, solo minuscula
+
+            </ul>
+
+            </p>
+
+            <section class="section">
+                <h3 class="section__h3">Especificidad</h3>
+                <p class="section__p">
+                    La especificidad (specificity) es la forma en que los navegadores deciden que regla CSS se aplica a
+                    un elemento. Mientras más específica sea una regla más peso tendrá pero también será más dificil de
+                    sobre escribir y mantener el código limpio.
+
+                </p>
+
+                <p class="section__p">Los valores de especificidad se calculan sumando 3 columnas (0,0,0):
+                <ul>
+                    <li>1. la primera columna representa los IDs: por cada ID, sumamos un valor al contador ej: (3,0,0)
+                    </li>
+                    <li>2. la segunda columna cuenta las clases, sus atributos [...] y pseudoclases (:hover, :root,
+                        required :nth-child (odd)). ej: #miobjeto #milogo .logo = 2,1,0</li>
+                    <li>3. la terecera columna cuenta los elementos o tags (p, input, strong, body) y pseudoelementos
+                        (::before ::after)</li>
+                </ul>
+
+                <h4 class="section__h4">
+                    para decidir cuál regla aplicar, se considera primero el valor más alto de la primera columna, luego
+                    el
+                    de la segunda y luego de la tercera.
+                    (5,0,25) esta es más especifica que la de abajo, porque el primer numero es el más importante
+                    (3,25,329)
+
+                    (3,0,25) sí es así, si que es esta la más especifica, porque es mayor (e igual el primer numero)
+                    (3,25,329)
+                    importancia: primero la primera columna, luego segunda y luego tercera
+                    Los inline stlyes generan una nueva columna, haciendolos más específicos que el resto. Por último el
+                    "!important" sobre pasa al inline. (no recomendado)
+                </h4>
+
+                <section class="section">
+                    <h3 class="section__h3">Metodología BEM</h3>
+                    <p class="section__h3">
+                        Esta Metodología se centra en Bloques - Elementos - Modificadores (de ahi sus siglas)
+                        Los nombres de las clases son en kebab-case separando con _ _ (2 guiones bajos) los ejementos y
+                        con - - (guion medios) los mofidicadores.
+                        ejemplo: .bloque __elemento--modificador
+                    </p>
+                    <p>
+                        Bloques: cajas que spor si solas tienen sentido: header, container, checkbox, boton, footer,
+                        menu. ej: .mi-boton .boton
+                    </p>
+                    <p>
+                        Elementos: partes de un bloque que no tienen sentido por sí solos. "menu item", "list item",
+                        "list title", "checkbox caption", "header title"
+
+                    </p>
+
+                    <p>
+                        Modificadores: variantes de la apariencia o comportamiento de un bloque o elemento: "disabled",
+                        "highlited", "size big", "color"
+
+                    </p>
+
+                    <button class="boton">boton normal </button>
+                    <button class="boton mi-boton--color-sucess">boton de exito (verde)</button>
+                    <button class="boton mi-boton--color-danger">boton de peligro (rojo)</button>
+
+
+                </section>
+
+                </p>
+
+            </section>
+
+    </main>
+    <footer class="footer">
+        <h3 class="footer__h3">RRSS</h3>
+        <ul class="footer_ul">
+            <li class="footer_li"> <a class="footer_a" href="#">fb</a></li>
+            <li class="footer_li"> <a class="footer_b" href="#">ig</a></li>
+            <li class="footer_li"> <a class="footer_b" href="#">x</a></li>
+        </ul>
+        <a href="#" class="link">Términos y condiciones</a>
+
+    </footer>
+
+    <script>
+        var NombreYApellido = "Alba Sánchez" //PascalCase
+        var nombreyapellido = "Alba Sánchez" //camelCase
+        var nombreYApellido = "Alba Sánchez"
+        var nombreyapellido = "Alba Sánchez"
+
+    </script>
+
+</body>
+
+</html>
