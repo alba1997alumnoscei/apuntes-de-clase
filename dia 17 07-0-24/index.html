@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    
+</head>
+
+<body>
+
+    <h1 class="title">Media Queries</h1>
+
+
+
+    <section>
+        <h2>Qué son las MQ?</h2>
+        <p>
+            Declaración en CSS que nos permite definir cómo se va a visualizar nuestra web. En CSS vamos a hacer algo
+            que nos dice cómo se va a ver nuestra web.
+        </p>
+
+        <h2>sintaxis de un MQ</h2>
+        <P>
+            una MQ se compone de múltiples partes:
+        <ul>
+            <li>Keyword: <strong>@media</strong> es una palabra clave reservada</li>
+            <li>MediaType: un tipo de medida. Ej: screen, print, all </li>
+            <li>Operador/es: Ej: and, not, only. Nota: si no uso un breakpoint, no es necesario usar un operador </li>
+            <li>Breakpoints: condición a cumplirse. Ej: max-width, min-width</li>
+            <li>Reglas CSS: bloque de reglas</li>
+        </ul>
+        orden: /*keyword MediaType Operador/es (breakpoints) {reglas de CSS}*/
+        <style>
+            /*keyword MediaType Operador/es (breakpoints) {reglas de CSS}*/
+
+            .title {
+                color: blue;
+            }
+
+            @media screen and (min-width:600px) {
+                .title {
+                    color: red;
+                }
+            }
+
+            @media print {
+                .title {
+                    display: none;
+                }
+
+                h2 {
+                    color: green;
+                }
+            }
+        </style>
+
+
+        </P>
+
+        <h2>Tipos de Media (screen/print)</h2>
+        - Print: destinado a material de vista de impresión <br>
+        - Screen: destinado a pantallas a color (utilizado por defecto) <br>
+        - All: Todos los dispositivos <br>
+        - Pueden encontrar otros tipos que ya no usan: tv, handheld, speech, braile, etc <br>
+
+        <style>
+            .titulo2 {
+                background-color: red;
+            }
+
+            @media screen and (min-width: 600px) {
+                .titulo2 {
+                    background-color: aquamarine;
+
+                }
+            }
+        </style>
+        <h3 class="titulo2">Tips para utilizar media Queries</h3>
+        <ol>
+            <li>los MQ sobreescriben las reglas de CSS anteriores, PERO no poseen mayor especificidad que las otras
+                reglas, por eso debemos agregarlas al final del documento. </li>
+            <li>deben utilizar los mismos selectores que quieran reemplazar</li>
+            <li>Pensar bien los breakpoints</li>
+            <li>Podemos utilizar una @media para cada selector, o una para todos los selectores (la más recomendada). Es decir, agrupar todas las reglas para mobile, todas las reglas para tablets, y todas las reglas para desktop</li>
+
+        </ol>
+
+
+        <h3>Mobile vs. Tablet vs. Desktop</h3>
+        - Mobile (55%): tamaño de pantalla 320px-768px <br>
+        - Tablet (2%): tamaño de pantalla 768px-1024px <br>
+        - Desktop (43%): tamaño de pantalla 1024px-1920px o más  <br>
+<p>
+        Mobile first: Planificar nuestra web para dispositivo movil y después hacer los MQ para tablet o desktop. Motivos: es el más usado, el usuario tiene que ver la información de mínimo (cuál es lo minimo que tiene que ver?), por ejemplo la publicidad no quiero enseñarsela en el movil y solo en tablet o desktop. 
+<p>
+
+
+
+</p>
+    </p>
+
+        <style>
+            /*mobile*/
+            /*Reglas de Mobile First*/
+            .titulo2{
+                color: yellow;
+
+            }
+
+            /*Tablets*/
+            @media screen and (min-width:768px) and (max-width:1024px ) {
+                .titulo2{
+                    color: blue;
+                }
+            }
+            /*Desktop*/
+            @media screen and (min-width:1024px) {
+                .titulo2{
+                    color: blue;
+                }
+            }
+            
+
+        </style>
+
+        <h3>uso de MQ en HTML</h3>
+
+        Podemos utilizar los @media directamente en el HTML utlizando el atributo "media". Antes que nada, debemos asegurarnos de que nuestro HTML incluya la etiqueta META en el head. 
+        <strong>meta name="viewport" content="width=device-width, initial-scale=1.0"</strong> 
+
+        <ul>
+            <li>etiquetas de Link 
+               <strong> link rel="stylesheet" href=".css/tablet.css" media="screen and (min-width: 768px)"</strong> le estoy diciendo a mi etiqueta del link que va a funcionar siempre y cuando la pantalla tengo una anchura minima de 768px.</li>
+               <li>Etiqueta en style (no recomendada): <strong> style media="screen and (min-width: 768px)</strong> 
+               </li>
+               <li>Etiqueta de picture: <br>
+                <picture> 
+                <source media="(min.width: 650px)" srcset="img/mifoto_large">
+                <source media="(min.width: 450px)" srcset="img/small">
+                <img src="img/mifoto.png" alt="mi foto"> /*esta es la que se muestra en pantalla*/
+            </picture>
+               </li>
+        </ul>
+    </section>
+
+</body>
+
+</html>

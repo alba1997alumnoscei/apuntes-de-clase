@@ -13,14 +13,12 @@
         html {}
 
         .header {}
-.header__logo {}
-.header__ul{}
-.header__li{}
-        
-    
 
+        .header__logo {}
 
-       
+        .header__ul {}
+
+        .header__li {}
     </style>
 
 
@@ -62,10 +60,13 @@
                 <li class="section__li">UPPERCASE: ".MICLASE"</li>
                 <li class="section__li">lowercase: ".miclase"</li>
                 <li class="section__li">PascalCase: ".Mi Clase"</li> la primera letra de cada palabra en mayuscula
-                <li class="section__li">camelCase: ".miClase"</li> la primera es la unica que va en minuscula. podría ser:
+                <li class="section__li">camelCase: ".miClase"</li> la primera es la unica que va en minuscula. podría
+                ser:
                 estoEsUnEjemploDeComoSería
-                <li class="section__li">kebab-case: ".kebab-case"</li> separacion con guiones medios. solo minuscula, no mayuscula
-                <li class="section__li">snake-case: ".snake_case</li> separamos con guión bajo. no mayuscula, solo minuscula
+                <li class="section__li">kebab-case: ".kebab-case"</li> separacion con guiones medios. solo minuscula, no
+                mayuscula
+                <li class="section__li">snake-case: ".snake_case</li> separamos con guión bajo. no mayuscula, solo
+                minuscula
 
             </ul>
 
@@ -83,11 +84,15 @@
                 <p class="section__p">Los valores de especificidad se calculan sumando 3 columnas (0,0,0):
                 <ul>
                     <li>1. la primera columna representa los IDs: por cada ID, sumamos un valor al contador ej: (3,0,0)
-                    </li>
+                    <strong>ID</strong></li>
                     <li>2. la segunda columna cuenta las clases, sus atributos [...] y pseudoclases (:hover, :root,
-                        required :nth-child (odd)). ej: #miobjeto #milogo .logo = 2,1,0</li>
+                        required :nth-child (odd)). ej: #miobjeto #milogo .logo = 2,1,0 <strong>.CLASS, [Atributos], :pseudoclases</strong></li>
                     <li>3. la terecera columna cuenta los elementos o tags (p, input, strong, body) y pseudoelementos
-                        (::before ::after)</li>
+                        (::before ::after) <strong>elementos o tags</strong>
+                        pseudoclases: que son? son modificadores que pueden tener nuestros elementos.
+                        la pseudoclase :root equivale a la etiqueta <html>
+
+                    </li>
                 </ul>
 
                 <h4 class="section__h4">
@@ -107,10 +112,20 @@
                 <section class="section">
                     <h3 class="section__h3">Metodología BEM</h3>
                     <p class="section__h3">
-                        Esta Metodología se centra en Bloques - Elementos - Modificadores (de ahi sus siglas)
+                        <p> Esta Metodología se centra en Bloques - Elementos - Modificadores (de ahi sus siglas)</p>
                         Los nombres de las clases son en kebab-case separando con _ _ (2 guiones bajos) los ejementos y
                         con - - (guion medios) los mofidicadores.
                         ejemplo: .bloque __elemento--modificador
+                    </p>
+                    <p>
+                        es una nomenclatura que nos ayuda a poner nombres
+                        a qué nos ayuda? a organizarnos mejor. 
+                        tambien es para que otra persona vea tu codigo y lo entienda y si tiene que modificar el codigo sepa como hacerlo. 
+                        nos sirve para leer pero tambien para escribir, para que no todos escribamos de la misma manera. 
+                        
+
+
+
                     </p>
                     <p>
                         Bloques: cajas que spor si solas tienen sentido: header, container, checkbox, boton, footer,
@@ -127,6 +142,8 @@
                         "highlited", "size big", "color"
 
                     </p>
+                    <p>https://jonassebastianohlsson.com/specificity-graph/ </p>
+
 
                     <button class="boton">boton normal </button>
                     <button class="boton mi-boton--color-sucess">boton de exito (verde)</button>
@@ -142,10 +159,10 @@
     </main>
     <footer class="footer">
         <h3 class="footer__h3">RRSS</h3>
-        <ul class="footer_ul">
-            <li class="footer_li"> <a class="footer_a" href="#">fb</a></li>
-            <li class="footer_li"> <a class="footer_b" href="#">ig</a></li>
-            <li class="footer_li"> <a class="footer_b" href="#">x</a></li>
+        <ul class="footer__ul">
+            <li class="footer__li"> <a class="footer__a" href="#">fb</a></li>
+            <li class="footer__li"> <a class="footer__b" href="#">ig</a></li>
+            <li class="footer__li"> <a class="footer__b" href="#">x</a></li>
         </ul>
         <a href="#" class="link">Términos y condiciones</a>
 
