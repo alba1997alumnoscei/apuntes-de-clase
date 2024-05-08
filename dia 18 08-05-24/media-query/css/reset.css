@@ -1,0 +1,6 @@
+/* Reseteo de Estilo*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*vamso a haer que el ancho de nuestros elementos se sumen al padding y al bordre¡er */
+}

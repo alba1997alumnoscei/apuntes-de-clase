@@ -1,0 +1,65 @@
+/*estilos generales (mobile First)*/
+
+.contenido{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(150, 212, 214);
+
+/*nuevo material explicado ahora mismo*/
+    transition: background-color 1s;
+
+}
+
+.titulo {
+font-size: 2rem;
+color: rgb (32, 32, 32);
+}
+
+.titulo--mobile{
+    display: block;
+   
+
+}
+
+.titulo--tablet, .titulo--desktop {
+    display: none;
+
+}
+
+
+.imagen {
+    width: 200px;
+}
+
+.imagen_img{
+    width: 200px;
+    
+
+}
+
+/*Implementación de MQ despues de nuestro código general, porque sobreescriben la ultima versión en caso de que tengan la misma especificidad*/
+
+/*Versión de tablet*/
+
+@media screen and (min-width:768px) and (max-width: 1024px){
+    .titulo--tablet                     {display: block;}
+    
+    .titulo--mobile, .titulo--desktop   {display: none;}
+
+    .contenido{
+        background-color: rgb(84, 190, 114);}
+}
+
+/*Versión de desktop*/
+
+@media screen and (min-width:1024px) {
+    .titulo--desktop                     {display: block;}
+    
+    .titulo--mobile, .titulo--tablet   {display: none;}
+
+    .contenido{
+        background-color: rgb(202, 214, 150);}
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--cargamos los CSS en el orden-->
+    <link rel="stylesheet" href="./media-query/css/reset.css">
+    <link rel="stylesheet" href="./media-query/css/media-query.css">
+</head>
+
+<body>
+
+    <main class="contenido"> <!--lo nombramos solo "contenido" para estilizar porque si no se queda muy largo"-->
+        <!--el título principal-->
+        <h1 class="titulo titulo--mobile">Mobile</h1>
+        <h1 class="titulo titulo--tablet">Tablet</h1>
+        <h1 class="titulo titulo--desktop">Desktop</h1>
+
+
+        <!--BEM: Bloques, Elementos y modificadores, el modificador peude ser un modificador del elemento o directamente del bloque
+        bloque__elemento--modificador : aqui se esta mofidicando un elemento
+        bloque--modificador: aqui se modifica el bloque-->
+
+
+        <!--la imagen principal-->
+        <picture class="imagen">
+
+            <!--fuentes de imagen alternativas de acuerdo al MQ, aqui no hace falta que le pongamos ninguna clase para MQ porque son imagenes que no vamos cambiar en-->
+            <source media="(min-width:768px) and (max-width: 1024px)" srcset="./media-query/img/tablet.jpg">
+            <source media="(min-width:1024px)" srcset="./media-query/img/desktop.jpg">
+
+            <img class="imagen_img" src="./media-query/img/mobile.jpg" alt="imagen principal">
+
+
+        </picture>
+
+
+
+    </main>
+
+</body>
+
+</html>
