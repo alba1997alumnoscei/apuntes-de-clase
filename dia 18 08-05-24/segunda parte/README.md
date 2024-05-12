@@ -5,9 +5,8 @@
 Son una forma de cambiar los valores de las propiedades de un elementode manera suave y gradual. Se pueden aplicar transiciones a cualquier propiedad que acepte valores numéricos o de color. Por ejemplo pueden animar el cambio de tamaño (size, fontside...), su color, su color de fondo o su opacidad. 
 
 
+![Imagen](https://s1.elespanol.com/2022/03/23/curiosidades/mascotas/659444577_222934315_1706x960.jpg)
 
-
-![Imagen] (https://i.pinimg.com/236x/26/24/9a/26249a78777f6e3527d959ed4399dc1e.jpg)
 
 ## Dónde lo podemos utilizar 
 
