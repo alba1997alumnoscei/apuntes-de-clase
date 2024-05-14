@@ -1,0 +1,43 @@
+/*los formatos posibles son ttf: true type; otf: opentype; woff: woff; woff2: woff2 */
+@font-face {
+    font-family: "Crotah"; /*nombre a utilizar elegido por mí*/
+    src: url("../fonts/CrotahFreeVersionItalic-z8Ev3.ttf") format('truetype');
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins'
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.u-txtCrotah{
+    font-family: "Crotah"
+}
+
+.Main{
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
+}
+
+.Header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /*vertical y horaizontal*/
+    background: gray;
+    box-shadow: 0 2px 5px rgb(0, 0, 0.1);
+
+
+}
+
