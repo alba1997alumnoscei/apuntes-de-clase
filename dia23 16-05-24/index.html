@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid layout</title>
+
+    <style>
+        .GridContainer {
+            border: 5px solid black;
+            width: 90vw;
+
+            /* display: grid;
+            grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr) 1fr; 
+            grid-template-rows: 100px 100px 100px;*/
+            display: grid;
+            grid-template-columns: repeat (3, 1fr);
+            grid-template-rows: repeat (3, 100px);
+            grid-gap: 10px;
+            grid-template-areas:
+                "header header header"
+                "main main sidebar"
+                "footer footer footer"
+
+
+                /*Uso de GRID-GAP O GAP (son sinónimos)*/
+                /*soporta un valor para X e Y*/
+            gap:5px;
+
+            /*soporta 2 valores para X e Y*/
+            /*gap: 5px 20px;*/
+
+            /*grid-auto-rows: 200px;
+            grid-auto-columns: 200px;*/
+
+        }
+
+        .item-1 {
+            grid-column-start: 1;
+            grid-column-end: span 2;
+            /*ocupa 3 columnas*/
+            grid-row-start: 1;
+            grid-row-end: span 2;
+            /*ocupa 2*/
+
+            
+           
+        }
+
+
+        .item-2 {
+            grid-column: span 2;
+            /*desde donde estás, expandete 2 columnas*/
+            grid-row: span 2;
+            /*desde donde estás, expandete 2 filas*/
+            /*si el item 1 se corre, pues el lugar de inicio será diferente, aunque ocupará lo mismo*/
+        }
+
+        .item-3 {
+            grid-column: 2/4;
+            grid-row: 3/4;
+        }
+
+        .item {
+            border: 2px solid darkblue;
+            background-color: lightblue;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Grid Layout</h1>
+    <div>
+
+        <div class="GridContainer">
+            <div class="item item-1">Caja 1</div>
+            <div class="item item-2">Caja 2</div>
+            <div class="item item-3">Caja 3</div>
+            <div class="item item-4">Caja 4</div>
+            <div class="item item-5">Caja 5</div>
+            <div class="item item-6">Caja 6</div>
+
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -19,7 +19,7 @@ body{
 }
 
 .u-txtCrotah{
-    font-family: "Crotah"
+    font-family: "Crotah";
 }
 
 .Main{
@@ -37,6 +37,7 @@ body{
     padding: 10px 20px; /*vertical y horaizontal*/
     background: gray;
     box-shadow: 0 2px 5px rgb(0, 0, 0.1);
+    z-index: 2;
 
 
 }

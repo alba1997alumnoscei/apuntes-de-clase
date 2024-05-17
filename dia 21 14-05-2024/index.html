@@ -6,21 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RRSS - SuiteCSS - Fuentes - Transiciones</title>
 
-    <!--es mas rapido y recomendable usar links (@font-face) antes que @import-->
+    <!--FUENTE!! es mas rapido y recomendable usar links (@font-face) antes que @import-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <!--como me he descargado 2 fuentes a la vez desde Google Fonts, me inserta este link, y si clicamos nos lleva a una web donde ya están armados todos los @font-face y sus links donde indican el formato que tiene-->
 
-    <!--iconos de google-->
+
+
+    <!--SIMBOLO de LUNA -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-    <!--iconos de fontAwesome-->
+
+
+    <!--SIMBOLOS DE RRSS -- de fontAwesome - sacado de la libreria CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 
     <!--CSS mio-->
     <link rel="stylesheet" href="./css/layout.css">
@@ -34,7 +41,7 @@
 
 <body class="u-bgPrimary">
     <header class="Header u-bgPrimary"> <!--con mayuscula la H porque es SUITCSS-->
-        <h1 class="u-txtCrotah">RRSS</h1> <!--la tipografía es Crotah-->
+        <h1 class="u-txtCrotah u-txtPrimary">RRSS</h1> <!--la tipografía es Crotah-->
     </header>
 
     <main class="Main u-bgSecondary"> <!--lo gris-->
@@ -59,7 +66,7 @@
 
             </div>
 
-            <div class="IconBox u-bgPrimary IconBox--X">
+            <div class="IconBox u-bgPrimary IconBox--x">
                 <a class="IconBox-link" href="">
                     <div class="IconBox-layers">
                         <span class="IconBox-span"></span>
@@ -77,7 +84,7 @@
 
             </div>
 
-            <div class="IconBox u-bgPrimary IconBox--Insta">
+            <div class="IconBox u-bgPrimary IconBox--insta">
                 <a class="IconBox-link" href="">
                     <div class="IconBox-layers">
                         <span class="IconBox-span"></span>
@@ -155,6 +162,7 @@
 
     <div class="Controllers">
         <button id="btnDireccion" class="Btn">Columna</button>
+
         <!--no lo ponemos como controllers-brn (elemento) sino como un bloque directamente por si quiero utilizar después "btn" en otro sitio-->
         <button id="btnDarkLight" class="Btn Btn--icon">
             <span class="material-symbols-outlined">
@@ -170,33 +178,33 @@
         const btnDarkLight = document.querySelector("#btnDarkLight");
         const iconsContainer = document.querySelector(".Icons");
 
-        console.log("btn direction vale:", btnDirection)
+        console.log("btn direction vale:", btnDirection);
 
         // vamos a escuchar los clicks sobre los botones y cambiarle sus clases
-        
+
         btnDirection.addEventListener("click", () => {
-            iconsContainer.classList.toggle("u-FlexCol")
+            iconsContainer.classList.toggle("u-flexCol");
 
-        })
-
-        //condicional IF
-        if (iconsContainer.classList.contains ('u.flexCol') ){
-          btnDirection.textContent ="fila";
+            //condicional IF
+            if (iconsContainer.classList.contains('u-flexCol')) {
+                btnDirection.textContent = "Fila";
 
 
-        } else {
-            btnDirection.textContent = "columna";
-        }
+            } else {
+                btnDirection.textContent = "Column";
+            }
+        });
 
-       
 
         btnDarkLight.addEventListener("click", () => {
 
-            document.body.classList.toggle ("u-Dark");
-            if (document.body.classList.contains ("u-Dark"))btnDarkLight.querySelector("span").innerHTML="light_mode";
+            document.body.classList.toggle("u-Dark");
+            if (document.body.classList.contains("u-Dark")){
+                btnDarkLight.querySelector("span").innerHTML = "light_mode";
+            } else {
+                btnDarkLight.querySelector("span").innerHTML = "dark_mode";
 
-            
-
+            }
         });
 
 

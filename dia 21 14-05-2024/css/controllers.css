@@ -19,24 +19,40 @@
     --txt-secondary: #ddd;
 
     --box-shadow: 1px 1px 5px rgb(255,255,255,0.5)
+
+    
 }
 
 
 
 /*---------------------CLASES REUTILIZABLES (UTLILTIES)-----------------------------------------------*/
+
+body{
+    background: var(--bg-primary)
+}
+
+body.u-Dark{
+    background: var(--bg-primary)
+}
+
+
 .u-bgPrimary{
     background: var(--bg-primary);
+    transition: background-color 0.3s ease;
 }
 
 .u-bgSecondary{
     background: var(--bg-secondary);
+    transition: background-color 0.3s ease;
 }
 
 .u-txtPrimary{
     color: var(--txt-primary);
+    transition: color 0.3s ease;
 }
 .u-txtSecondary{
     color: var(--txt-secondary);
+    transition: color 0.3s ease;
 }
 .u-boxShadow{
     box-shadow: var(--box-shadow);
@@ -46,6 +62,11 @@
 /*Modo Row/Col*/
 .u-flexCol{
 
+    display: flex;
+    flex-direction: column;
+}
+
+.u-flexRow{
     display: flex;
     flex-direction: row;
 }
@@ -63,7 +84,7 @@
     display: flex;
     gap: 10px;
     padding: 10px;
-    background-color: gray;
+  
 }
 
 
