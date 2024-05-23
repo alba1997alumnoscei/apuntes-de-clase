@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 20-05/-24</title>
+</head>
+
+<body>
+
+    <button id="miBtnSuma">Sumar clicks!</button>
+    <button id="miBtnResta">Restar clicks!</button>
+    <button id="miBtnMultiplicar">Multiplicar por 5</button>
+    <button id="miBtnDividir">Dividir por 2</button>
+
+    <h3>Cantidad de clicks</h3>
+    <div id="resultado">00000</div>
+
+    <script>
+        
+        // Declaramos variables y obtenemos nuestros tags del DOM
+        const miBotonSuma = document.getElementById("miBtnSuma");
+        const miBotonResta = document.getElementById("miBtnResta");
+
+
+        const miBotonMultiplicar = document.getElementById("miBtnMultiplicar");
+        const miBotonDividir = document.getElementById("miBtnDividir");
+        const divResultado = document.getElementById("resultado");
+
+        let numero = 2;
+        divResultado.innerText = numero;
+
+        //Manipulamos el DOM al hacer click en los botones 
+        miBotonSuma.addEventListener("click", () => {
+            numero = numero + 1;
+            divResultado.innerText = numero
+        })
+
+        miBotonResta.addEventListener("click", () => {
+            numero = numero - 1;
+            divResultado.innerText = numero
+        })
+        miBotonMultiplicar.addEventListener("click", () => {
+            numero = numero * 5;
+
+            divResultado.innerText = numero;
+        });
+
+        miBotonDividir.addEventListener("click", () => {
+            numero = numero / 2;
+            divResultado.innerText = numero;
+        });
+
+
+
+
+
+
+        ;
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
