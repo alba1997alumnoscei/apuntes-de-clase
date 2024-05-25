@@ -171,6 +171,26 @@ let esMenor =               (num1   <       num2);    //false
 
 ```
 
+## Operadores Lógico
+
+Podemos verificar que múltiples operaciones sean verdaderas usando estos operadores: 
+
+- `| |` : preguntan si se cumple al menos una de estas opciones.
+- `&&`: se tienen que cumplir todas las opciones para que la respuesta sea TRUE.
+- `!`: Hace lo contrario de lo que es
+
+
+```js
+if (txtDia == "Sabado" || txtDia="Domingo") //que se cumple al menos una de estas opciones. 
+
+if (txtDia == "Sabado" && txtDia="Domingo") //que se cumplan todas estas opciones. 
+
+if (txtDia == "Sabado" ! txtDia="Domingo") //que se cumplan todas estas opciones. 
+
+```
+
+
+
 ## FUNCIONES 
 
 Una función es un bloque de código o algoritmo que realiza una operación específica. Puede recibir valores de entrada, y devolver un único resultado. 
