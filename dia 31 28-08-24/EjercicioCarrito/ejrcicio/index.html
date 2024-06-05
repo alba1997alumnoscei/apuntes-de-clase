@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+</head>
+<body>
+
+    <div>
+        <h1> Cafe</h1>
+        <button onClick="agregarItem(1)">agregar 1 al carrito</button>
+        <button onClick="agregarItem(2)">agregar 2 al carrito</button>
+        <button onClick="agregarItem(3)">agregar 3 al carrito</button>
+        
+    </div>
+
+
+    <div>
+        <h1> Bocadillo</h1>
+        <button onClick="agregarItem(1)">agregar 1 al carrito</button>
+        <button onClick="agregarItem(2)">agregar 2 al carrito</button>
+        <button onClick="agregarItem(3)">agregar 3 al carrito</button>
+    </div>
+
+
+    <div>
+        <h1> Bebida</h1>
+        <button onClick="agregarItem(1)">agregar 1 al carrito</button>
+        <button onClick="agregarItem(2)">agregar 2 al carrito</button>
+        <button onClick="agregarItem(3)">agregar 3 al carrito</button>
+    </div>
+
+
+    <div style="border-top: 1px solid black; margin: 10px; padding:10px">
+    <button onclick="verTotal()">Ver total de Items</button>
+    <button onclick="borrarCarrito()">Vaciar carrito</button>
+    </div>
+
+    <div id="información">999999</div>
+
+    <script>
+
+    // VARIABLES ------------------------------------------------------------
+
+    let cantidad=0;
+   
+
+    const txtInfo=document.getElementById("información")
+    txtInfo.innerHTML="Aquí tiene su resultado total"
+
+    //FUNCIONES ------------------------------------------------------------
+    function agregarItem ( numero ) {
+        cantidad =cantidad + (numero);
+        verTotal();
+      
+    }
+
+    function borrarCarrito (){
+        cantidad=0;
+        verTotal();
+
+    }
+
+    function verTotal (){ //formas de mostrar información al usuario 
+        const mensajito=`Has marcado ${cantidad} de items`;
+       
+        console.log (mensajito);
+        txtInfo.innerHTML= mensajito; 
+
+}
+
+    //CODIGO ------------------------------------------------------------
+
+
+    </script>
+
+
+
+</body>
+</html>

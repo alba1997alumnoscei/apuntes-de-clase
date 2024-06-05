@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de objeto</title>
+
+    <style>
+        .flexcontainer {
+            display: flex;
+        }
+
+        .miCaja {
+            width: 100px;
+            height: 100px;
+            background-color: lightgreen;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejemplo de objeto</h1>
+
+    <div class="flexContainer">
+        <div class="miCaja" id="miCaja1">Soy un Div</div>
+        <div class="miCaja" id="miCaja2">Soy un Div</div>
+    </div>
+
+
+
+
+    <script>
+        let nombre = "Alba" //VARIABLE 1: GLOBAL: funciona en todo el código 
+
+        function miNombre () {
+
+            let apellido = "SE" //VARIABLE 2:LOCAL: funciona solo en funciones y objetos. 
+
+            if (miNombre == "Alba")
+            let saludar = true; //VARIABLE 3: BLOQUE: solo funciona en FOR-WHILE-IF-DOWHILE
+        }
+
+        //Si yo creo ahora un console.log y le pregunto por "saludar" me va a dar un valor de undefined, ya que esa variable la he creado dentro de un bloque, y para que me devolviera el valor tendría que estar fuera. Ejemplo:
+
+        console.log(saludar); //undefined
+
+        // Si hago lo mismo con nombre y apellido, solo me va a valer el de nombre porque es la variable que está fuera. 
+        console.log(nombre); //Alba 
+        console.log(saludar); //undefined
+    </script>
+
+
+
+
+
+    <script>
+        //PARTE 1: GENERAR VARIABLES 
+        //agarramos las cajitas de mi HTML
+        const myDiv1 = document.getElementById("miCaja1");
+        const myDiv2 = document.getElementById("miCaja2");
+        const container = document.querySelector(".flexContainer");
+
+        const divChanger = { //en mi cambiador de cajas 
+            objetoACambiar: null, //le digo cuál es el objeto que quiero cambiar (la propiedad a cambiar)
+            
+            cambiarAncho: function (ancho) { //pero hay un metodo que es cambiar el ancho
+                this.objetoACambiar.style.width = ancho; //200px
+                //this: de este objeto "divChanger", agarra lo que hay dentro "objetoACambiar" y cambiale el estilo/width.
+            },
+            cambiarAlto: function (alto) { //aqui igual pero con el alto
+                this.objetoACambiar.style.height = alto; //200px
+            },
+            cambiarAnchoYAlto: function (medida) { //aqui ancho y alto con la misma medida 
+                this.objetoACambiar.style.width = medida; //200px
+                this.objetoACambiar.style.height = medida; //200px
+            },
+
+            cambiarFondo: function (url) {
+                this.objetoACambiar.style.backgroundImage = `url (${url} )`, //agarre una URL y la meta en una caja de fondo "backgroundImage"
+                this.objetoACambiar.style.backgroundSize = "cover"; //quiero que se expanda para que ocupe toda la caja posible
+                this.objetoACambiar.style.backgroundPosition = "center"; //y la imagen que esté en el centro 
+            }
+        }
+
+
+        //cambiando las propiedades de Div1 (caja 1)
+
+        divChanger.objetoACambiar = myDiv1; //mi objeto + agarro el valor de objeto a cambiar y el myDiv1 es lo que vas a cambair. 
+        divChanger.cambiarAncho("200px");
+
+        //cambiando las propiedades de Div2 (caja 2)
+        divChanger.objetoACambiar = myDiv2;
+        divChanger.cambiarAncho("300px");
+        divChanger.cambiarFondo ("https://images.unsplash.com/photo-1541873676-a18131494184?q=80&w=1918&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+
+         //cambiando ancho y alto de mi Div2 (caja 2)
+         divChanger.cambiar = myDiv2;
+        divChanger.cambiarAnchoYAlto("300px");
+
+        //Cambiar el estilo de myDiv1 en lugar de con CSS
+        myDiv1.style.border = "1px solid black"; //caja + estilo + borde
+        myDiv1.innerText = "Estoy cambiando el contenido de mi caja 1"; //caja + texto interno
+
+
+
+
+    </script>
+
+</body>
+
+</html>
