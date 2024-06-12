@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRACTICA CALCULADORA</title>
+    <style>
+        .calculadora {
+            border: 1px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Calculadora</h1>
+    <div class="calculadora">
+        <div>
+            <input type="number" id="num1" placeholder="Número 1">
+        </div>
+        <div>
+            <input type="number" id="num2" placeholder="Número 2">
+        </div>
+
+        <button id="btnSumar">+</button>
+        <button id="btnRestar">-</button>
+        <button id="btnDivi">/</button>
+        <button id="btnMulti">x</button>
+
+        <h3>Resultado</h3>
+        <div id="divResultado"></div>
+
+    </div>
+
+    <script>
+        //----------------------------------------------------------------------
+        //1.Definimos variables
+        //----------------------------------------------------------------------
+        const input1 = document.querySelector("#num1");
+        const input2 = document.querySelector("#num2");
+
+        const divResultado = document.querySelector("#divResultado");
+
+        let valor1 = 0;
+        let valor2 = 0;
+
+        let resultado = 0;
+
+        //Obtenemos botones
+        const btnSumar = document.querySelector("#btnSumar");
+        const btnRestar = document.querySelector("#btnRestar");
+        const btnDivi = document.querySelector("#btnDivi");
+        const btnMulti = document.querySelector("#btnMulti");
+
+        //----------------------------------------------------------------------
+        //2. Eventos de las funciones 
+        //----------------------------------------------------------------------
+
+        btnSumar.addEventListener("click", () => {
+            obtenerValores();               //obtenemos los valores 1 y 2
+            resultado = valor1 + valor2;    //sumamos esos valores
+            imprimirResultado();            //los mostramos en pantalla
+        });
+
+        btnRestar.addEventListener("click", () => {
+            obtenerValores();
+            resultado = valor1 - valor2;
+            imprimirResultado();
+        });
+
+        btnDivi.addEventListener("click", () => {
+            obtenerValores();
+            resultado = valor1 / valor2;
+            imprimirResultado();
+        });
+
+        btnMulti.addEventListener("click", () => {
+            obtenerValores();
+            resultado = valor1 * valor2;
+            imprimirResultado();
+        });
+
+
+
+        //----------------------------------------------------------------------
+        //3. Función para obtener valores 
+        //----------------------------------------------------------------------
+
+        function obtenerValores() {
+            valor1 = parseFloat(input1.value);
+            valor2 = parseFloat(input2.value);
+
+        }
+        //----------------------------------------------------------------------
+        //4. Imprime el resultado 
+        //----------------------------------------------------------------------
+
+        function imprimirResultado() {
+            divResultado.innerHTML = resultado;
+        }
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

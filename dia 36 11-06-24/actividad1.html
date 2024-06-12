@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1: Tarjetas Alumnos </title>
+    <style>
+        .tarjeta{
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="contenedor">
+
+           cargando usuarios...
+
+
+    </div>
+
+    <script>
+        //este JSON devuelve una lista de usuarios porque comienza y termina con []
+
+    const dataUsuarios = `[{
+    "nombre": "Juan Pérez",
+    "edad": 28,
+    "correo": "juan.perez@example.com"
+  },
+
+  {
+    "nombre": "Ana Gómez",
+    "edad": 34,
+    "correo": "ana.gomez@example.com"
+  },
+
+  {
+    "nombre": "Luis Torres",
+    "edad": 23,
+    "correo": "luis.torres@example.com"
+  }]` 
+
+//CONVERTIR DATOS DE JSON A UN OBJETO O LISTA DE JS 
+// creamos una constante que se llame diferente a dataUsuarios y convertimos el string de JSON a Objeto JS
+  const listaUsuarios = JSON.parse(dataUsuarios); 
+        console.log("OBJ JS ES:", listaUsuarios);
+        console.log("NOMBRE 1 ES:", listaUsuarios[0].nombre); 
+
+//Creamos una constante y hacemos referencia al html 
+
+    const divContenedor = document.querySelector("#contenedor"); 
+
+    listaUsuarios.forEach(usuario => {
+
+        console.log(   usuario.nombre  );
+
+        divContenedor.innerHTML += ` <div class="tarjeta">
+            <h3>${usuario.nombre}</h3>
+            <p>Edad: ${usuario.edad}</p>
+            <p>Correo: ${usuario.correo}</p>
+        </div>`;
+    });
+    
+    
+
+
+    </script>
+
+</body>
+
+</html>

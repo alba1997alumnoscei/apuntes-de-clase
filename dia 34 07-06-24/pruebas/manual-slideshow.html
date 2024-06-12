@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}/*esto haría que no se vea ninguna imagen*/
+</style>
+<body>
+
+<h2 class="w3-center">Manual Slideshow</h2>
+
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="img_snowtops.jpg" style="width:100%">
+  <img class="mySlides" src="img_lights.jpg" style="width:100%">
+  <img class="mySlides" src="img_mountains.jpg" style="width:100%">
+  <img class="mySlides" src="img_forest.jpg" style="width:100%">
+
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+<script>
+
+//crear variable slideIndex y le asigna el valor 1
+var slideIndex = 1; //que foto es la que estoy mostrando y probablemente quiera elegir la primera 
+
+
+//funcion showDivs y le estoy mandando como argumento: el div 1 "slideIndex". Es decir, lo muestra. 
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+
+/*
+Muestra los Divs
+@param {number{ n - el indice del slide a mostrar
+**/
+function showDivs(n) {
+  var i; //crea una variable "i" undefined 
+  
+  //obtengo una lista de las 4 imagenes con clase mySlide
+  
+  var x = document.getElementsByClassName("mySlides");
+  
+  //revisar si N supera el máximo de elementos que tengo. 
+  if (n > x.length) {
+  slideIndex = 1}
+  
+  //si quiero ver la foto 0, o negatva me muestra la última foto de vuelta
+  if (n < 1) {
+  slideIndex = x.length} //lenght es un metodo de los arrays ; funciona si tengo 4 fotos, 8, 500... 
+  
+  
+  //bucle que esconde todas las imagenes poniendo display: none
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  
+  //solo muestro la imagen que me interesaba ver 
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+</body>
+</html>

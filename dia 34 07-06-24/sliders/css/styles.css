@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.Slider{
+    overflow: hidden; /*para que todo lo que entre en la caja no me lo muestre, todo lo que salga de la caja esté oculto y no me lo muestre*/
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+.Slider-images{
+    display: flex;
+    width: 400px;
+    height: 600px;
+    transition: transform 0.5s ease;
+}
+
+.Slider-images img{/*a cada imagen (img) del grupo slider-images le voy a poner un...*/
+    min-width: 400px;
+    max-width: 400px;
+    min-height: 600px;
+    max-height: 600px;
+
+    object-fit: contain; /*se contenga dentro de su tamaño*/
+}

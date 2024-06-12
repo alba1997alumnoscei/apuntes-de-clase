@@ -1,72 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRACTICA CALCULADORA</title>
+    <style>
+        .calculadora {
+            border: 1px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 200px;
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="calculadora">
-    <div>
-        <input type="number" id="num1" placeholder="Número 1">
+    <h1>Calculadora</h1>
+    <div class="calculadora">
+        <div>
+            <input type="number" id="num" placeholder="Número">
+        </div>
+
+
+        <button id="btnSumar">+</button>
+        <button id="btnRestar">-</button>
+        <button id="btnDivi">/</button>
+        <button id="btnMulti">x</button>
+
+
+        <button id="btnIgual">=</button>
+
+
+        <h3>Resultado</h3>
+        <div id="divResultado"></div>
+
     </div>
-    <div>
-        <input type="number" id="num2" placeholder="Número 2">
-    </div>
 
-    <button id="btnSumar">+</button>
-    <button id="btnRestar">-</button>
-    <button id="btnDivi">/</button>
-    <button id="btnMulti">*</button>
+    <script>
+        //----------------------------------------------------------------------
+        //1.Definimos variables
+        //----------------------------------------------------------------------
+        const input = document.querySelector("#num");
 
-   
+        const divResultado = document.querySelector("#divResultado");
 
-</div>
+        let valor1 = 0;
+        let valor2 = 0;
 
-<button id="btnIgual">=</button>
+        let resultado = 0;
+        let operacion = ""; //sumar, restar, dividir, multiplicar 
 
-<h3>Resultado</h3>
-<div id="divResultado"></div>
+        //Obtenemos botones
+        const btnSumar = document.querySelector("#btnSumar");
+        const btnRestar = document.querySelector("#btnRestar");
+        const btnDivi = document.querySelector("#btnDivi");
+        const btnMulti = document.querySelector("#btnMulti");
 
-<script>
-    //1.Definimos variables
-    const input1 = document.querySelector("#num1");
-    const input2 = document.querySelector("#num2");
-    const divResultado = document.querySelector ("divResultado");
+        const btnIgual = document.querySelector("#btnIgual");
 
-    let valor1=0;
-    let valor2=0;
+        //----------------------------------------------------------------------
+        //2. Eventos de las funciones 
+        //----------------------------------------------------------------------
 
-    let resultado=0;
+        btnSumar.addEventListener("click", () => {
+            valor1 = obtenerValores();     //obtenemos del input el valor y guardarlo en valor1
+            operacion = "sumar";
+            input.value = 0;
 
-//obtener botones
+        });
 
-const btnSumar = document.querySelector("#btnSumar");
-const btnResta = document.querySelector ("#btnResta")
+        btnRestar.addEventListener("click", () => {
+            valor1 = obtenerValores();     //obtenemos del input el valor y guardarlo en valor1
+            operacion = "restar";
+            input.value = 0;
+        });
 
-//2. Definir las funciones 
+        btnDivi.addEventListener("click", () => {
+            valor1 = obtenerValores();     //obtenemos del input el valor y guardarlo en valor1
+            operacion = "dividir";
+            input.value = 0;
+        });
 
-btnSumar.addEventListener("click", () => {
+        btnMulti.addEventListener("click", () => {
+            valor1 = obtenerValores();     //obtenemos del input el valor y guardarlo en valor1
+            operacion = "multiplicar";
+            input.value = 0;
+        });
 
-    //1. obtener los valores 1 y 2
-    obtenerValores();
-    //2. sumar esos números
-    resultado = valor1 + valor2;
-    //3. Mostrar en pantalla
-    imprimirResultado ();
-})
+        btnIgual.addEventListener("click", () => {
+            //1. obtener del input el valor, y guardarlo en valor2
+            valor2 = obtenerValores();
 
-function imprimirResultado () {
-    divResultado.innerHTML= ("resultado"+resultado);
-}
+            /* //2. HACER EL CALCULO: ESTO PODRÍA SER UN METODO, CON EL IF. 
+             if (operacion == "sumar"){
+                 resultado =valor1 + valor2;
+             }
+ 
+             else if (operacion == "resta"){
+                 resultado =valor1 - valor2;
+             }
+ 
+             else if (operacion == "multiplicar"){
+                 resultado =valor1 * valor2;
+             }
+ 
+             else if (operacion == "dividir"){
+                 resultado =valor1 / valor2;
+             }
+         }*/
+
+            //SEGUNDO MÉTODO: SWITCH : equivalente al if () else if () etc 
+        });
+        switch (operacion) {
+            case "sumar":
+                resultado = valor1 + valor2;
+                break;
+
+            case "resta":
+                resultado = valor1 - valor2;
+                break;
+
+            case "dividir":
+                resultado = valor1 / valor2;
+                break;
+
+            case "multiplicar":
+                resultado = valor1 * valor2;
+                break;
+
+        }
+        
+        valor1=resultado; // actualizo valor1 para operaciones infinitas 
+        input.value = resultado; //muestro el resultado en el input 
+        imprimirResultado(); //muestro el resultado en el DIV
+
+        
+
+        //----------------------------------------------------------------------
+        //3. Función para obtener valores del input
+        //----------------------------------------------------------------------
+
+        function obtenerValores() {
+            let num = parseFloat(input.value);
+            return num;
+
+        }
+
+        //----------------------------------------------------------------------
+        //4. Imprime el resultado 
+        //----------------------------------------------------------------------
+
+        input.value=0;
+        imprimirResultado (); 
+
+    </script>
 
 
 
-</script> 
 
-
-
-    
 </body>
+
 </html>

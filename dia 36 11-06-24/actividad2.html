@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2: Menu</title>
+</head>
+
+<body>
+    <div class="contenedor">
+
+    </div>
+
+    <script>
+
+//1 objeto con una propiedad "menu" y a su vez con 3 categorias "bebidas, prinicpales y postres"
+const dataMenu= `{
+  "menu": [{
+      "nombre": "Bebidas",
+      "items": [
+            {
+            "nombre": "Coca-Cola",
+            "precio": 2.5
+            },
+            {
+            "nombre": "Jugo de Naranja",
+            "precio": 3.0
+            },
+            {
+            "nombre": "Agua Mineral",
+            "precio": 1.5
+            }
+        ]
+    },
+    {
+      "nombre": "Platos Principales",
+      "items": [
+            {
+            "nombre": "Hamburguesa",
+            "precio": 8.0
+            },
+            {
+            "nombre": "Pizza",
+            "precio": 10.0
+            },
+            {
+            "nombre": "Ensalada César",
+            "precio": 6.5
+            }
+        ]
+    },
+    {
+      "nombre": "Postres",
+      "items": [
+            {
+            "nombre": "Tiramisú",
+            "precio": 4.5
+            },
+            {
+            "nombre": "Cheesecake",
+            "precio": 5.0
+            },
+            {
+            "nombre": "Helado",
+            "precio": 3.0
+            }
+        ]
+    }]
+}`;
+
+//1. convierto mi JSON a objeto de JS
+const objMenu = JSON.parse(dataMenu);
+console.log("NOMBRE 1 ES:", objMenu); 
+
+
+//2. obtengo mi objMenu
+const listaMenu = objMenu.menu;
+console.log("lista menu es:", listaMenu);
+
+const divContenedor = document.querySelector(".contenedor")
+
+//3. recorro la objMenu imprimiendo la categoria con forEach 
+
+listaMenu.forEach(categoria => {
+    const titulo = categoria.nombre;
+    const listaItems = categoria.items;
+
+    let productosHTML="";
+    listaItems.forEach(item =>{
+        productosHTML += `<li>
+                            <span>${nombre}<span>
+                                <span><b>${precio.toFixed (2)}</b><span>
+                        </li>`;
+                            
+    });
+
+    //ahora sí, imprimir el título y los productos todo junto 
+    divContenedor.innerHTML += `
+    <div class="categoria">
+        <h3>${titulo}</h3>
+        <ul>
+            ${productosHTML}
+        </ul>
+    </div>`;    
+
+
+})
+
+
+//4. Para cada categoría obtengo la listaItems y los imprimo en pantalla, solo los titulos principales. 
+
+    </script>
+    
+</body>
+
+</html>
