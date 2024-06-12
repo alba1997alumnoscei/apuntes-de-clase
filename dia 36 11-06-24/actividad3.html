@@ -7,34 +7,54 @@
     <title>Ejercicio 3: Películas</title>
 
     <style>
-        .contenedor img{
+        .main {
+            display: flex;
+
+        }
+
+        body {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+
+        }
+
+        .contenedor img {
             max-width: 200px;
         }
 
-        .contenedor{
+        .contenedor {
             background: #ccc;
+            flex-grow: 1;
+            display: flex;
+            flex-wrap: wrap;
         }
 
-        .pelicula{
-            background: lightgray;
+        .pelicula {
+            width: 200px;
+            background: pink;
             min-height: 200px;
+            padding: 10px;
+        }
+
+        .peliCard {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
         }
     </style>
 </head>
 
 <body>
+    <main class="main">
 
-    <!--lista de peliculas: cada película con su fotito-->
-    <div class="contenedor"></div>
-    <!--datos de la pelicula seleccionada-->
-    <div class="pelicula">
-        <h3>titulo": "Inception",</h3>
-        "genero": "Ciencia Ficción",
-        "puntaje": 8.8,
-        "descripcion": "Un ladrón que roba secretos corporativos a través del uso de tecnología de sueños es dado la tarea inversa de plantar una idea en la mente de un CEO.",
+        <!--lista de peliculas: cada película con su fotito-->
+        <div class="contenedor"></div>
 
-    </div>
+        <!--datos de la pelicula seleccionada-->
+        <div class="pelicula">seleccione una peli</div>
 
+    </main>
 
 
 
@@ -64,7 +84,7 @@
         }
         ]`;
 
-        // 1. convierto mi JSON  objeto de JS
+        // -----------------------------------1. convierto mi JSON  objeto de JS
 
         const listaPeliculas = JSON.parse(dataPeliculas);
         console.log(listaPeliculas);
@@ -72,33 +92,90 @@
         const divContenedor = document.querySelector(".contenedor");
         const dataPelicula = document.querySelector(".pelicula")
         //imprimo todo el objeto de interestelar
-        console.log(listaPeliculas[2].genero);
+        //console.log(listaPeliculas[2].genero);
+
+
+
+
 
         // 2. Recorremos cada película, y creamos un div en contenedor
-        listaPeliculas.forEach(pelicula => {
-            
+        listaPeliculas.forEach((pelicula, indice) => { //recorremos las peliculas y el indice 
+
             //ahora trabajo con pelicula
-            console.log(pelicula.genero);
+            console.log(pelicula.titulo);
+            console.log(indice); //en que posición del array está
 
-             
-            divContenedor.innerHTML += 
-            `<div class="peli">
-                <h1> ${pelicula.titulo} </h1>
-            <img src="${pelicula.imagen}" alt="${pelicula.titulo}"></div>`
-            ;
-        });
+            //  --------------------------- version 1: ONCLICK             
+            //             divContenedor.innerHTML += //cuando hacemos clic se va a la posicion del array (indice) en la que está la peli (0,1,2); 
+            //             `<div class="peliCard" onClick="seleccionarPelicula (${indice})"> 
+            //                 <h2> ${pelicula.titulo} </h2>
+            //             <img src="${pelicula.imagen}" alt="${pelicula.titulo}"></div>`
+            //             ;
+            //         });
 
-// 3. Agregamos un eventListener ("click") en cada película recién creada y su función deberá cargar un DIV en .pelicula con sus datos 
+            //-------------------- version 2: CREATE ELEMENT 
 
-const pelis =document.querySelectorAll(".peli");
-pelis.forEach(peli => {
-    peli.addEventListener("click", ( event    ) =>{
-        const divPelicula = event.target; 
-        console.log(divPelicula);
+
+            const peliculaDiv = document.createElement('div');
+            peliculaDiv.classList.add("peliCard");
+
+            peliculaDiv.innerHTML = `
+<h2>${pelicula.titulo} </h2>
+<img src="${pelicula.imagen}" alt="${pelicula.titulo}"`;
+
+            divContenedor.appendChild(peliculaDiv);
+            peliculaDiv.addEventListener("click", () => {
+                alert("me hicieron click")
+            });
+
+            //creamos una funcion que se llame seleccionarPelicula 
+            function seleccionarPelicula(num) {
+
+                console.log(listaPeliculas[num]);
+                const pelicula = listaPeliculas[num];
+
+                divPelicula.innerHTML += ` 
+   
+        <h3>${pelicula.titulo}</h3>
+        <ul>
+        <li>${pelicula.genero} </li>
+        <li>${pelicula.puntaje} </li>
         
+        </ul>
+        <p>${pelicula.descripcion} </p>
 
-    });
-})
+        `;
+
+
+
+
+
+
+            }
+
+
+
+
+
+
+            // 3. Agregamos un eventListener ("click") en cada película recién creada y su función deberá cargar un DIV en .pelicula con sus datos 
+
+            // const pelis =document.querySelectorAll(".peliCard");
+            // pelis.forEach(peliCard => {
+            //     peliCard.addEventListener("click", ( event    ) =>{
+
+            //const divPelicula = event.target; --> con el target obtenemos a quién le hice click? si le hago clic al h1, a la img o al div y si hacemos un console log pues nos dice a qué le hemos hecho clic.  
+
+            //como nosotros queremos que le haga clic a todo el cuadro (con el div, la img y el h1) vamos a usar el metodo: event.target.closest (".peliCard")
+
+            //para ellos usaremos .clasest() para encontrar el ".peliCard" más cercano incluso cuando hago clic en un hijo del elemento. es decir si clico en la img o en el h1, me va a llevar a .peliCard "inception".  
+            //         const divPelicula = event.target.closest (".peliCard");
+
+            //         console.log(divPelicula);
+
+
+            //     });
+        })
 
 
 

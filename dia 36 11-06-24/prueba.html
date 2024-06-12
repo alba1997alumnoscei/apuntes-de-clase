@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3: Películas</title>
+
+    <style>
+        .main {
+            display: flex;
+        }
+
+        body {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .contenedor img {
+            max-width: 200px;
+        }
+
+        .contenedor {
+            background: #ccc;
+            flex-grow: 1;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .pelicula {
+            width: 200px;
+            background: pink;
+            min-height: 200px;
+            padding: 10px;
+        }
+
+        .peliCard {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main">
+        <!-- lista de peliculas: cada película con su fotito -->
+        <div class="contenedor"></div>
+
+        <!-- datos de la pelicula seleccionada -->
+        <div class="pelicula">Seleccione una peli</div>
+    </main>
+
+    <script>
+        const dataPeliculas = `[
+        {
+            "titulo": "Inception",
+            "genero": "Ciencia Ficción",
+            "puntaje": 8.8,
+            "descripcion": "Un ladrón que roba secretos corporativos a través del uso de tecnología de sueños es dado la tarea inversa de plantar una idea en la mente de un CEO.",
+            "imagen": "https://www.originalfilmart.com/cdn/shop/files/inception_2010_french_original_film_art_5000x.webp?v=1686692704"
+        },
+        {
+            "titulo": "The Dark Knight",
+            "genero": "Acción",
+            "puntaje": 9.0,
+            "descripcion": "Cuando el Joker emerge como el nuevo villano del caos, Batman debe aceptar uno de los mayores desafíos psicológicos y físicos para combatir la injusticia.",
+            "imagen": "https://m.media-amazon.com/images/S/pv-target-images/e9a43e647b2ca70e75a3c0af046c4dfdcd712380889779cbdc2c57d94ab63902.jpg"
+        },
+        {
+            "titulo": "Interstellar",
+            "genero": "Aventura",
+            "puntaje": 8.6,
+            "descripcion": "Un equipo de exploradores viaja a través de un agujero de gusano en el espacio en un intento de asegurar la supervivencia de la humanidad.",
+            "imagen": "https://pics.filmaffinity.com/Interstellar-366875261-large.jpg"
+        }
+        ]`;
+
+        const listaPeliculas = JSON.parse(dataPeliculas);
+        console.log(listaPeliculas);
+
+        const divContenedor = document.querySelector(".contenedor");
+        const divPelicula = document.querySelector(".pelicula");
+
+        listaPeliculas.forEach((pelicula, indice) => {
+            const peliculaDiv = document.createElement('div');
+            peliculaDiv.classList.add("peliCard");
+
+            peliculaDiv.innerHTML = `
+                <h2>${pelicula.titulo}</h2>
+                <img src="${pelicula.imagen}" alt="${pelicula.titulo}">
+            `;
+
+            divContenedor.appendChild(peliculaDiv);
+            peliculaDiv.addEventListener("click", () => {
+                seleccionarPelicula(indice);
+            });
+        });
+
+        function seleccionarPelicula(num) {
+            console.log(listaPeliculas[num]);
+            const pelicula = listaPeliculas[num];
+
+            divPelicula.innerHTML = `
+                <h3>${pelicula.titulo}</h3>
+                <ul>
+                    <li>Género: ${pelicula.genero}</li>
+                    <li>Puntaje: ${pelicula.puntaje}</li>
+                </ul>
+                <p>${pelicula.descripcion}</p>
+            `;
+        }
+    </script>
+</body>
+
+</html>

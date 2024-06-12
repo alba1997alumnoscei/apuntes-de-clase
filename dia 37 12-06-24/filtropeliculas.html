@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrar peliculas</title>
+
+    <style>
+        .pelicula {
+            border: 1px solid black;
+            display: flex;
+        }
+
+        .pelicula img {
+            width: 200px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Filtrar películas</h1>
+
+    <!--Filtro-->
+    <div>
+        <label for="inputTitulo">Filtrar por título: </label>
+        <input type="text" id="inputTitulo" placeholder="Ingrese el titulo de la peli "></p>
+
+    </div>
+    <!--Botones-->
+    <div>
+        <button class="btn" id="btnTodos">Todos</button>
+        <button class="btn" id="btnSciFi"> Ciencia Ficción</button>
+        <button class="btn" id="btnAction"> Acción</button>
+        <button class="btn" id="btnAdventure">Aventura</button>
+    </div>
+
+    <!--PELIS DEL CONTAINER-->
+    <div class="pelisContainer"></div>
+
+
+
+    <script>
+
+        //------------------------------------------------------------------------------------------------------------------------------
+        //1. Definir variables ---------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------
+        const pelisContainer =  document.querySelector('.pelisContainer');
+        const inputTitulo =     document.querySelector("#inputTitulo");
+
+
+        // Botones 
+        const btnTodos =        document.querySelector("#btnTodos")
+        const btnSciFi =        document.querySelector("#btnSciFi")
+        const btnAction =       document.querySelector("#btnAction")
+        const btnAdventure =    document.querySelector("#btnAdventure")
+
+        // Nuestro JSON
+        const jsonPeliculas = `[
+        {
+            "titulo": "Inception",
+            "genero": "Ciencia Ficción",
+            "puntaje": 8.8,
+            "descripcion": "Un ladrón que roba secretos corporativos a través del uso de tecnología de sueños es dado la tarea inversa de plantar una idea en la mente de un CEO.",
+            "imagen": "https://www.originalfilmart.com/cdn/shop/files/inception_2010_french_original_film_art_5000x.webp?v=1686692704"
+        },
+        {
+            "titulo": "The Dark Knight",
+            "genero": "Acción",
+            "puntaje": 9.0,
+            "descripcion": "Cuando el Joker emerge como el nuevo villano del caos, Batman debe aceptar uno de los mayores desafíos psicológicos y físicos para combatir la injusticia.",
+            "imagen": "https://m.media-amazon.com/images/S/pv-target-images/e9a43e647b2ca70e75a3c0af046c4dfdcd712380889779cbdc2c57d94ab63902.jpg"
+        },
+        {
+            "titulo": "Interstellar",
+            "genero": "Aventura",
+            "puntaje": 8.6,
+            "descripcion": "Un equipo de exploradores viaja a través de un agujero de gusano en el espacio en un intento de asegurar la supervivencia de la humanidad.",
+            "imagen": "https://pics.filmaffinity.com/Interstellar-366875261-large.jpg"
+        }
+        ]`;
+        
+        //Conversión de JSON A JS
+        const listaPeliculas = JSON.parse(jsonPeliculas)
+
+        //Agregar eventListeners
+
+        btnTodos.addEventListener("click", () =>{
+            listarPeliculas(listaPeliculas);
+            
+        });
+        btnSciFi.addEventListener("click", () => filtrarPorGenero ("Ciencia Ficción"));
+        btnAction.addEventListener("click", () => filtrarPorGenero ("Acción"));
+        btnAdventure.addEventListener("click", () => filtrarPorGenero ("Aventura"));
+    
+
+        inputTitulo.addEventListener("input", () =>{
+            const texto = inputTitulo.value.toLowerCase();
+            console.log(texto);
+
+            const pelisFiltradas = listaPeliculas.filter (peli => peli.titulo.toLowerCase().includes(texto));
+            console.log(pelisFiltradas)
+
+            listarPeliculas(pelisFiltradas);
+        }); 
+
+
+        //------------------------------------------------------------------------------------------------------------------------------
+        //2. Nuestras funciones---------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------
+
+        function listarPeliculas(lista) {
+
+            //mostrar en pantalla las pelis con template string 
+            pelisContainer.innerHTML = "";
+
+
+            lista.forEach(peli => {
+
+                pelisContainer.innerHTML += `
+        <div class="pelicula">
+            <img src="${peli.imagen} alt="${peli.titulo}"/>
+            <div>
+            <h2>${peli.titulo}</h2>
+            <p><strong>Género: </strong> ${peli.genero}</p>
+            <p><strong>Puntaje: </strong>${peli.puntaje}</p>
+            <p>${peli.descripcion}</p>
+            </div>
+        </div>
+        `;
+            })
+        }
+
+ 
+        function filtrarPorGenero(genero) {
+            const pelisFiltradas = listaPeliculas.filter( peli => peli.genero === genero); 
+            listarPeliculas(pelisFiltradas);
+        }
+
+
+        //------------------------------------------------------------------------------------------------------------------------------
+        //3. Ejecutar el codigo---------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------
+
+        listarPeliculas(listaPeliculas);
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
