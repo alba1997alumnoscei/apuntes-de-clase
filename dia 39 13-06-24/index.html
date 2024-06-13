@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acordeón</title>
+    <style>
+        .acordion {
+            border: 1px solid ccc;
+        }
+
+        .acordion-item {
+            padding: 5px;;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .acordion-content {
+            display: none;
+        }
+
+        .acordion-header {
+            background: lightgreen;
+        }
+
+        .active .acordion-content {
+            display: block;
+        }
+
+        .active .acordion-header {
+            background: lightcoral;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="acordion">
+        <div class="acordion-item">
+            <div class="acordion-header">Sección 1</div>
+            <div class="acordion-content">Contenido de sección 1</div>
+        </div>
+
+        <div class="acordion-item">
+            <div class="acordion-header">Sección 2</div>
+            <div class="acordion-content">Contenido de sección 2</div>
+        </div>
+
+        <div class="acordion-item">
+            <div class="acordion-header">Sección 3</div>
+            <div class="acordion-content">Contenido de sección 3</div>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        //1.Declarar variables y elementos 
+        const acordeon = document.querySelector(".acordion");
+        const headers = document.querySelectorAll (".acordion-header");
+        const acordionItems = document.querySelectorAll (".acordion-item");
+
+        //2.Paso 2: nuestras funciones
+        headers.forEach(header => {
+            
+            header.addEventListener ("click", () => {
+
+                const item =header.closest(".acordion-item"); 
+
+                //cerrar todos los content (quitar el active)
+                acordionItems.forEach(elemento => {
+                    elemento.classList.remove("active");
+                })
+
+                //abrir el content al que le hice click (agregar el active)
+                item.classList.add("active");
+            });
+        });
+
+        //Paso 3: ejecutar nuestro código 
+        //activar el primer acordeon
+        acordionItems[0].classList.add('active');
+
+
+    </script>
+
+</body>
+
+</html>
